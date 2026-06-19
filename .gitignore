@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+
+# Env / secrets
+.env
+
+# Local runtime
+uploads/
+*.log
+
+# Model weights are huge — never commit them
+models_cache/
+*.safetensors
+*.gguf

@@ -1,0 +1,19 @@
+[project]
+name = "vlm-validation"
+version = "0.1.0"
+description = "Local playground for testing open-source vision-language models (Mac/PC)"
+requires-python = ">=3.12"
+dependencies = [
+    "flask>=3.0",
+    "python-dotenv>=1.0",
+    "pillow>=10.0",
+    # Inference stacks. lift-pdf[hf] pulls a Qwen3.5-capable transformers + torch.
+    "lift-pdf[hf]",
+    "transformers",
+    "torch",
+    "accelerate",
+    "num2words",        # required by some SmolVLM/Idefics processors
+]
+
+[tool.uv]
+# Keep resolution permissive; lift-pdf may pin a recent transformers.

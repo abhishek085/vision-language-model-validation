@@ -1,0 +1,28 @@
+{
+  "type": "object",
+  "properties": {
+    "invoice_number": { "type": "string", "description": "Invoice number or ID" },
+    "invoice_date": { "type": "string", "description": "Date the invoice was issued" },
+    "due_date": { "type": "string", "description": "Payment due date" },
+    "vendor_name": { "type": "string", "description": "Name of the seller / vendor" },
+    "bill_to": { "type": "string", "description": "Name of the customer being billed" },
+    "currency": { "type": "string", "description": "Currency code or symbol" },
+    "subtotal": { "type": "number", "description": "Subtotal before tax" },
+    "tax": { "type": "number", "description": "Total tax amount" },
+    "total_amount": { "type": "number", "description": "Grand total / amount due" },
+    "line_items": {
+      "type": "array",
+      "description": "Individual line items on the invoice",
+      "items": {
+        "type": "object",
+        "properties": {
+          "description": { "type": "string" },
+          "quantity": { "type": "number" },
+          "unit_price": { "type": "number" },
+          "amount": { "type": "number" }
+        }
+      }
+    }
+  },
+  "required": ["invoice_number", "total_amount"]
+}
